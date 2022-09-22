@@ -1,0 +1,87 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-6">
+
+        <div class="mt-5 text-center">
+          <h2>Add a trip</h2>
+          <p>Save a hostel you've stayed at so you can look back on what made it great. Or remind yourself why you'd
+            never want to recommend it to even your worst enemy.</p>
+        </div>
+
+        <div class="mt-5">
+          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Hostel Name</label>
+              <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" name="city" id="city" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label for="imgUpload" class="form-label">Upload a photo</label>
+              <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+
+            <div class="mb-3">
+              <label for="dateVisited" class="form-label">Dates Stayed</label>
+              <input type="text" class="form-control" id="dateVisited" name="dateVisited">
+            </div>
+
+            <div class="mb-3">
+              <label for="review" class="form-label">Add your thoughts</label>
+              <textarea class="form-control" id="review" name="review"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="quickReview">Quick review - would you recommend this hostel?</label>
+              <select class="form-select form-control" name="quickReview">
+                <option selected>Select Response</option>
+                <option value="Yah">Yah</option>
+                <option value="Nah">Nah</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="friendsMet">Did you meet any new friends at this stay?</label>
+              <section class="friendsMetList mb-1">
+                <section class="friendsDiv mb-1">
+                  <input type="text" name="friendsMetList" class="form-control">
+                </section>
+              </section>
+              </div>
+              <section class="col-12">
+                <button type="button" class="btn btn-outline-warning text-black" id="metFriendsBtn">More
+                  friends!</button>
+              </section>
+<!-- 
+              <section class="col-12">
+                <button type="button" class="btn btn-outline-warning text-black" id="lessFriendsBtn">Whoops - too many
+                  friends</button>
+              </section> -->
+
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/post/<%= posts[i]._id%>">
+                <img class="img-fluid" src="<%= posts[i].image%>">
+              </a>
+            </li>
+            <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <%- include('partials/footer') -%>

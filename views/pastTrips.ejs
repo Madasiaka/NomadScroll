@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i < posts.length; i++) {%>
+            <% if(posts.user != user.id) { %>
+                <li class="col-6 justify-content-between mt-5">
+                <a href="/post/<%= posts[i]._id%>">
+                <img class="img-fluid" src="<%= posts[i].image%>">
+                <span> <%= posts[i].hostelName %> </span>
+                <span> <%= posts[i].city %> </span>
+                </a>
+            </li>
+            <% } %>
+        <% } %>
+        </ul>
+    </div>
+  </div> 
+
+
+<%- include('partials/footer') -%>
