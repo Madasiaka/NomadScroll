@@ -1,10 +1,10 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row justify-content-center mt-5">
+  <div class="row justify-content-center mt-24">
     <div class="col-6">
-      <h2><%= post.hostelName %></h2>
-      <h3><%= post.city %></h3>
-      <img class="img-fluid" src="<%= post.image%>" />
+      <h2 class="text-5xl font-bold pb-2"><%= post.hostelName %></h2>
+      <h3 class="text-3xl pb-2 pl-5"><%= post.city %></h3>
+      <img class="shadow-2xl img-fluid" src="<%= post.image%>" />
 
       
       <div class="row justify-content-between">
@@ -12,14 +12,15 @@
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
-          class="col-3"
+          class="left col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-primary btn-outline fa fa-trash" type="submit"></button>
         </form>
         <%}%>
       </div>
     </div>
     <div class="col-3 mt-5">
+      <h3 class="text-2xl text-decoration-line: underline">Thoughts:</h3>
       <p><%= post.review %></p>
       <span>Quick Review</span>
       <% if(post.quickReview == "Yah"){ %>
@@ -41,12 +42,9 @@
           <label for="comment" class="form-label">Comment</label>
           <input type="text" class="form-control" id="comment" name="comment">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary btn-outline">Submit</button>
     </form>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/home">Return Home</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
-    </div>
+    
   </div>
 </div>
 
