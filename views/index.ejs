@@ -1,11 +1,72 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+    <main>
+        <div class="hero min-h-screen bg-base-200 p-10">
+            <div class="hero-content flex-col lg:flex-row">
+                <img src="https://images.pexels.com/photos/4907179/pexels-photo-4907179.jpeg?cs=srgb&dl=pexels-ketut-subiyanto-4907179.jpg&fm=jpg"
+                    class="max-w-sm rounded-lg shadow-2xl" />
+                <div>
+                    <h1 class="text-5xl font-bold">Real friends make the best travel advisors</h1>
+                    <p class="py-6">Backpacking is an adventure full of encountering the unexpected around every corner, but chosing a
+                        hostel for the night shouldn't be that way. Listen to the people who understand what you're
+                        looking
+                        for in an accomodation - your friends who slept there last night.</p>
+                    <div class="text-center">
+                        <a href="/signup" class="btn btn-primary">Get Started</a>
+                        <a href="/login" class="btn btn-primary"> Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="bg-slate-300">
+        <h2 class="text-4xl font-bold text-center p-10">How it works</h2>
+        <div class="hero-content flex-col lg:flex-row-reverse p-10">
+            <img src="https://images.pexels.com/photos/8828319/pexels-photo-8828319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+                <h2 class="text-5xl font-bold">Track where you've been</h2>
+                <p class="py-6">Notes, pictures, ratings - whatever helps you remember the hostels you've been to. Keep
+                    track and help your buddies when they hit you up for recs.</p>
+            </div>
+        </div>
     </div>
-</main>
-    
+    <div class="bg-slate-300">
+        <div class="hero-content flex-col lg:flex-row p-10">
+            <img src="https://images.pexels.com/photos/3776776/pexels-photo-3776776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+                <h2 class="text-5xl font-bold">Plan where you're going</h2>
+                <p class="py-6">Staying in the same city or looking for a whole new scene? Find somewhere else you'll
+                    want to lay your head.</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-slate-300">
+        <div class="hero-content flex-col lg:flex-row-reverse p-10">
+            <img src="https://images.pexels.com/photos/3756157/pexels-photo-3756157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+                <h2 class="text-5xl font-bold">Lean on your homies</h2>
+                <p class="py-6">Find out the real scoop from people you actually trust - your friends who have already
+                    stayed where you want to go. No questionable review sources here.</p>
+            </div>
+        </div>
+    </div>
 
-<%- include('partials/footer') -%>
+    <div class="hero "
+        style="background-image: url(https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Join us</h1>
+                <p class="mb-5">We're building an authentic network of travelers who know that low cost accomodations
+                    just means you have more budget for 2am tacos to share with your new best friends.</p>
+                <a href="/signup" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('partials/footer') -%>

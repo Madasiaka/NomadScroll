@@ -13,24 +13,41 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <header class="container">
-    <div class="text-left">
-      <h1 class=""><a href="/home">NomadScroll</a></h1>
+
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a href="/home" class="btn btn-ghost normal-case text-xl">NomadScroll</a>
     </div>
-    <nav id="nav">
-      <ul>
-        <li><a href="/home">Home</a></li>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          </div>
+        </label>
+        <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+          <li>
+            <a class="justify-between">
+              Home
+              <span class="badge">New</span>
+            </a>
+          </li>
+          
         <li><a href="/addTrip">Add a trip</a></li>
         <li><a href="/pastTrips">Past trips</a></li>
         <!-- <li><a href="/futureTrips">Future trips</a></li> -->
         <!-- <li><a href="/friends">Friends list</a></li> -->
         <li><a href="/feed">My gang</a></li>
         <li><a href="/logout" class="button">Logout</a></li>
-      </ul>
-    </nav>
+        </ul>
+      </div>
+    </div>
+  </div>
   </header>
 </body>
 </html>
