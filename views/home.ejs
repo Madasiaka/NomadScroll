@@ -1,5 +1,23 @@
 <%- include('partials/header') -%>
 
-<h1> HOME PAGE (temp)</h1>
-
+<div class="hero h-fit p-24 bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="https://images.pexels.com/photos/4907181/pexels-photo-4907181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold">Where will you sleep tonight?</h1>
+        <p class="py-6">Check out your past hostel list or where your friends have recently stayed</p>
+        <div class="w-100%"">
+        <a href="/pastTrips" class="btn btn-outline btn-primary">Past Trips</a>
+        <a href="/feed" class="btn btn-outline btn-primary">Friend Suggestions</a>
+      </div>
+      
+      </div>
+      
+      </div>
+    </div>
+    <div class="bg-base-300 flex-none w-100% p-20 text-center">
+    <a href="/addTrip" class="btn btn-outline btn-primary">Mark a new stay</a>
+  </div>
+  </div>
+  
 <%- include('partials/footer') -%>

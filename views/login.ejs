@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 
-<main class="container">
+<main class="container h-90% p-10">
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
@@ -9,6 +9,7 @@
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
+      <h2 class="text-5xl font-bold pb-10">Login</h2>
       <form action="/login" method="POST">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
@@ -31,7 +32,7 @@
             name="password"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-outline">Submit</button>
       </form>
     </section>
   </div>
