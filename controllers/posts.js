@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment")
+const User = require("../models/User");
 
 module.exports = {
   getHome: async (req, res) => {
@@ -21,8 +22,10 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      const posts = await Post.find().sort({ createdAt: "desc" })
+      .populate('user')
+      .lean();
+      res.render("feed.ejs", { posts: posts, user: req.user, userName: req.userName });
     } catch (err) {
       console.log(err);
     }
@@ -58,6 +61,7 @@ module.exports = {
         quickReview: req.body.quickReview,
         friendsMet: req.body.friendsMet,
         user: req.user.id,
+        userName: req.user,
       });
       console.log("Post has been added!");
       res.redirect("/home");
