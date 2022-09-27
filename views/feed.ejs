@@ -15,8 +15,8 @@
                   <p>
                     <%= posts[i].city %>
                   </p>
-                  <p>
-                    <%= posts[i].user %> </p>
+                  <p>Reviewed by: 
+                    <%= posts[i].user.userName %> </p>
                       <div class="card-title text-3xl justify-end">
                         <% if(posts[i].quickReview=="Yah" ){ %>
                           <span class="fa fa-thumbs-up"></span>
