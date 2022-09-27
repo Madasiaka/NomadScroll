@@ -35,7 +35,19 @@
               <label for="review" class="form-label">Add your thoughts</label>
               <textarea class="form-control" id="review" name="review"></textarea>
             </div>
-
+            
+            <div class="mb-3">
+              <label for="friendsMet">Did you meet any new friends at this stay?</label>
+              <section class="friendsMetList mb-1">
+                <section class="friendsDiv mb-1">
+                  <input type="text" name="friendsMetList" class="form-control">
+                </section>
+              </section>
+            </div>
+              <section class="mb-3">
+                <button type="button" class="btn btn-outline " id="metFriendsBtn">Add another friend</button>
+              </section>
+            
             <div class="mb-3">
               <label for="quickReview">Quick review - would you recommend this hostel?</label>
               <select class="form-select form-control" name="quickReview">
@@ -44,25 +56,14 @@
                 <option value="Nah">Nah</option>
               </select>
             </div>
-            <div class="mb-3">
-              <label for="friendsMet">Did you meet any new friends at this stay?</label>
-              <section class="friendsMetList mb-1">
-                <section class="friendsDiv mb-1">
-                  <input type="text" name="friendsMetList" class="form-control">
-                </section>
-              </section>
-              </div>
-              <section class="col-12">
-                <button type="button" class="btn btn-outline btn-primary" id="metFriendsBtn">More
-                  friends!</button>
-              </section>
+           
 <!-- 
               <section class="col-12">
                 <button type="button" class="btn btn-outline-warning text-black" id="lessFriendsBtn">Whoops - too many
                   friends</button>
               </section> -->
 
-            <button type="submit" class="btn btn-primary btn-outline" value="Upload">Submit</button>
+            <button type="submit" class="btn btn-primary btn-outline mb-10" value="Upload">Submit</button>
 
           </form>
         </div>
