@@ -1,4 +1,6 @@
 <%- include('partials/header') -%>
+<%- include('partials/mapquestApi') -%>
+
   <div class="container ">
     <div class="row mt-5 justify-content-center">
       <div class="col-6">
@@ -12,8 +14,8 @@
         <div class="mt-5">
           <form action="/post/createPost" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
-              <label for="name" class="form-label">Hostel Name</label>
-              <input type="text" name="name" id="name" class="form-control" required>
+              <label for="hostelName" class="form-label">Hostel Name</label>
+              <input type="search" name="hostelName" id="hostelName" placeholder="Search for a hostel..." class="form-control" required>
             </div>
 
             <div class="mb-3">
