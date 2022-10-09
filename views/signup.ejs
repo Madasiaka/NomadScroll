@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-    <main class="mt-10 pb-10 container">
+    <main class="mt-10 pb-10 container w-100% bg-slate-100">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
@@ -31,7 +31,7 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn btn-outline btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-accent text-white bg-black">Submit</button>
                   </form>
             </section>
         </div>
