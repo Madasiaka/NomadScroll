@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<%- include('partials/mapquestApi') -%>
+<%- include('partials/mapQuestSearch') -%>
 
   <div class="container ">
     <div class="row mt-5 justify-content-center">
@@ -15,7 +15,10 @@
           <form action="/post/createPost" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="hostelName" class="form-label">Hostel Name</label>
-              <input type="search" name="hostelName" id="hostelName" placeholder="Search for a hostel..." class="form-control" required>
+              <!-- <div class>
+                <input type="search" id="search-input" placeholder="Start Searching..." />
+              </div> -->
+              <input type="search" name="hostelName" id="search-input" placeholder="Search for a hostel..." class="form-control" required>
             </div>
 
             <div class="mb-3">
