@@ -1,22 +1,4 @@
-<!-- <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
-<script type="text/javascript"></script>
-<script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_5P3OqT9RoFIOnVviL9ndddYQ2j-xe3E&callback=initMap">
-</script>
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script> -->
-
-<div class="container">
-    <!-- <div id="formatted-address"></div>
-    <div id="lat-lng"></div>
-    <form id="location-form">
-        <input class="w-50%" id="location-input" class="form-control form-control-lg" type="text">Hostel Name 
-        <br>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-    </form> -->
-    <div id="map" style="height: 450px;"></div>
-</div>
-
+<!-- 
 <script>
     //get name of place from location form submission
     var hostelForm = document.getElementById('hostelForm')
@@ -76,20 +58,28 @@
             console.log(error)
         })
     }
-</script>
+</script> -->
 
 <script>
 
-//initialize the actual map
-let map;
+    //initialize the actual map
+    let map;
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 15.87037, lng: -97.07726 },
-    zoom: 14,
-  });
-}
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 15.87037, lng: -97.07726 },
+            zoom: 14,
+        });
+    }
 
-//run it on window load
-window.initMap = initMap;
+    // new google.maps.Marker(myHostels, {
+    //     position: geometry.coordinates,
+    //     map,
+    //     title: properties.name,
+    // });
+
+    //run it on window load
+    window.initMap = initMap;
+
+
 </script>

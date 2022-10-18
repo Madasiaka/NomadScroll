@@ -1,4 +1,6 @@
 <%- include('partials/header') -%>
+<%- include('partials/maps') -%>
+
   <div class="container">
     <div class="row justify-content-center mt-24">
       <div class="col-6">
@@ -23,21 +25,25 @@
         <img class="shadow-2xl img-fluid" src="<%= post.image%>" />
       </div>
       <div class="col-5">
-        <div class="flex col-12 items-end flex-row-reverse justify-between">
           <%if(post.user==user.id){ %>
+            <div class="flex col-12 items-end flex-row-reverse justify-between">
             <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="left col-3">
               <button class="mt-12 text-center btn btn-accent bg-black text-white fa fa-trash" type="submit"> Delete Post</button>
             </form>
-            <%}%>
-        
-        <h3 class="text-3xl text-decoration-line: underline">Thoughts:</h3>
-        </div>
+          <%}else{%>
+            <div class="flex col-12">
+          <%} %>
+              <h3 class="text-3xl text-decoration-line: underline">Thoughts:</h3>
+            </div>
         <p class="my-3">
           <%= post.review %>
         </p>
         <div class="flex row justify-content-center">
           <div class="card card-compact bg-base-100 shadow-lg m-3">
-            <%- include('partials/maps') -%>
+            
+            <div class="container">
+              <div id="map" style="height: 450px;"></div>
+          </div>
           </div>
         </div>
       </div>
