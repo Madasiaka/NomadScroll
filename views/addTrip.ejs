@@ -1,4 +1,5 @@
 <%- include('partials/header') -%>
+<%- include('partials/maps') -%>
 
   <div class="container ">
     <div class="row mt-5 justify-content-center">
@@ -11,7 +12,7 @@
         </div>
 
         <div class="mt-5">
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <form action="/post/createPost" id="hostelForm" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="hostelName" class="form-label">Hostel Name</label>
               <input type="text" name="hostelName" id="hostelName" placeholder="Add a hostel ..." class="form-control" required>

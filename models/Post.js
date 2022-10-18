@@ -9,6 +9,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  formattedAddress: {
+    type: String,
+    required: false,
+  },
   coordinates: {
     type: Array,
     required: false,

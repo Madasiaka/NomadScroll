@@ -1,35 +1,36 @@
-<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<!-- <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
 <script type="text/javascript"></script>
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_5P3OqT9RoFIOnVviL9ndddYQ2j-xe3E&callback=initMap">
 </script>
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script> -->
 
 <div class="container">
-    <div id="formatted-address"></div>
+    <!-- <div id="formatted-address"></div>
     <div id="lat-lng"></div>
     <form id="location-form">
-        <input id="location-input" class="form-control form-control-lg" type="text">Hostel Name 
+        <input class="w-50%" id="location-input" class="form-control form-control-lg" type="text">Hostel Name 
         <br>
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
-    </form>
-    <div id="map" style="width: 75%; height: 530px;"></div>
+    </form> -->
+    <div id="map" style="height: 450px;"></div>
 </div>
 
 <script>
     //get name of place from location form submission
-    var locationForm = document.getElementById('location-form')
-    locationForm.addEventListener('submit', getAddress)
+    var hostelForm = document.getElementById('hostelForm')
+
+    hostelForm.addEventListener('submit', getAddress)
 
     //run steps to get address
-    function getAddress (e){
+    function getAddress (){
 
         //Prevent submit from happening until after you click
-        e.preventDefault();
+        //e.preventDefault();
 
         //use location from form submission
-        var location = document.getElementById('location-input').value
+        var location = document.getElementById('hostelName').value
 
         //link axios to handle the get requests for you/connect to the API
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -47,26 +48,28 @@
             //formatted address
             var formattedAddress = response.data.results[0].formatted_address;
 
-            var formattedAddressOutput = `
-                <ul class="list-group">
-                    <li class="list-group-item">${formattedAddress}</li>
-                </ul>
-            `;
+            // var formattedAddressOutput = `
+            //     <ul class="list-group">
+            //         <li class="list-group-item">${formattedAddress}</li>
+            //     </ul>
+            // `;
 
             //Geometry - lattitude and longitude
             var lat = response.data.results[0].geometry.location.lat
             var lng = response.data.results[0].geometry.location.lng
-            var geometryOutput = `
-            <ul class="list-group">
-                    <li class="list-group-item"><strong>Latitude</strong>${lat}</li>
-                    <li class="list-group-item"><strong>Longitude</strong>${lng}</li>
-                </ul>
-            `;
+
+            var coordinates = [lat, lng]
+            // var geometryOutput = `
+            // <ul class="list-group">
+            //         <li class="list-group-item"><strong>Latitude</strong>${lat}</li>
+            //         <li class="list-group-item"><strong>Longitude</strong>${lng}</li>
+            //     </ul>
+            // `;
 
             //output to app
-            document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+            // document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
 
-            document.getElementById('lat-lng').innerHTML = geometryOutput;
+            // document.getElementById('lat-lng').innerHTML = geometryOutput;
         })
         //if something goes wrong console log it
         .catch(function(error){
@@ -77,7 +80,7 @@
 
 <script>
 
-//show the actual map
+//initialize the actual map
 let map;
 
 function initMap() {

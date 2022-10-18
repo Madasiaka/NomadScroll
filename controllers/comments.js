@@ -1,3 +1,4 @@
+const User = require("../models/User");
 const Comment = require("../models/Comment");
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
         dislikes: 0,
         user: req.user.id,
         post: req.params.id,
+        userName: req.user,
       });
       console.log("Comment has been added!");
       res.redirect("/post/"+req.params.id);
