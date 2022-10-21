@@ -34,3 +34,8 @@
   html{
     height: 90%;
   }
+
+/* Standardize the buttons a bit better */
+  .btn{
+    width: 200px;
+  }

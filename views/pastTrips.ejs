@@ -1,10 +1,10 @@
 <%- include('partials/header') -%>
-<%- include('partials/maps') -%>
-  <div class="container ">
-    <div class="mt-24 row justify-content-center">
-      <h2 class="font-bold pb-10 text-5xl">My past trips</h2>
-      <ul class="row list-unstyled">
-        <% for(var i=0; i < posts.length; i++) {%>
+  <%- include('partials/maps') -%>
+    <div class="container ">
+      <div class="mt-24 row justify-content-center">
+        <h2 class="font-bold pb-10 text-5xl">My past trips</h2>
+        <ul class="row list-unstyled">
+          <% for(var i=0; i < posts.length; i++) {%>
             <% if(posts.user !=user.id) { %>
               <% pastTripsList ++ %>
                 <a href="/post/<%= posts[i]._id %>">
@@ -27,32 +27,31 @@
                     </div>
                 </a>
                 <% } %>
-                <% } %>
-                  <% if(pastTripsList==0) {%>
-                    <div class="hero min-h-screen bg-base-200">
-                      <div class="hero-content text-center">
-                        <div class="max-w-md">
-                          <h1 class="text-5xl font-bold">Uh oh</h1>
-                          <p class="py-6">You don't have any past trips added yet. Time to toss a dart at a map and go
-                            find an adventure! Don't forget to pack your passport and some snacks.</p>
-                          <figure class="shadow-2xl img-fluid"> <img
-                              src="https://images.pexels.com/photos/842961/pexels-photo-842961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                              alt="A bag with a passport in it"></figure>
-                          <a href="/addTrip"><button class="btn btn-primary">Add a trip</button></a>
+                  <% } %>
+                    <% if(pastTripsList==0) {%>
+                      <div class="hero min-h-screen bg-base-200">
+                        <div class="hero-content text-center">
+                          <div class="max-w-md">
+                            <h1 class="text-5xl font-bold">Uh oh</h1>
+                            <p class="py-6">You don't have any past trips added yet. Time to toss a dart at a map and go
+                              find an adventure! Don't forget to pack your passport and some snacks.</p>
+                            <figure class="shadow-2xl img-fluid"> <img
+                                src="https://images.pexels.com/photos/842961/pexels-photo-842961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="A bag with a passport in it"></figure>
+                            <a href="/addTrip"><button class="btn btn-primary">Add a trip</button></a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <% } %>
-                      
-      </ul>
-      <div class="card card-compact w-3/5 bg-base-100 z-10 m-3">            
-        <div class="container">
-          <div id="map" style="height: 450px;">
+                      <% } %>
+
+        </ul>
+        <div class="card card-compact w-3/5 bg-base-100 z-10 m-3">
+          <div class="container">
+            <div id="map" style="height: 450px;">
+            </div>
           </div>
+        </div>
       </div>
-  </div>
     </div>
-  </div>
 
-
-  <%- include('partials/footer') -%>
+    <%- include('partials/footer') -%>

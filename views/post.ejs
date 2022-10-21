@@ -2,18 +2,19 @@
 <%- include('partials/maps') -%>
 
   <div class="container">
-    <div class="row justify-content-center mt-24">
+    <div class="row flex sm:flex-col md:flex-row justify-content-center mt-24">
       <div class="col-6">
         <h2 class="text-5xl font-bold pb-6">
           <%= post.hostelName %>
         </h2>
-        <div class="row justify-space-between flex-1">
-          <div class="col-6">
+        <div class="">
+        <div class="justify-between flex sm:flex-row md:flex-col">
+          <div class="">
             <h3 class="text-3xl pb-6 ">
               <%= post.city %>
             </h3>
           </div>
-          <div class="col-6">
+          <div class="align-middle col-6">
             <span class="text-3xl mr-5">Quick Review:</span>
             <% if(post.quickReview=="Yah" ){ %>
               <span class="text-3xl fa fa-thumbs-up"></span>
@@ -22,13 +23,14 @@
                 <% } %>
           </div>
         </div>
+      </div>
         <img class="shadow-2xl img-fluid" src="<%= post.image%>" />
       </div>
       <div class="col-5">
           <%if(post.user==user.id){ %>
             <div class="flex col-12 items-end flex-row-reverse justify-between">
             <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="left col-3">
-              <button class="mt-12 text-center btn btn-accent bg-black text-white fa fa-trash" type="submit"> Delete Post</button>
+              <button class="mt-12 text-center btn btn-accent gap-2 bg-black text-white fa fa-trash" type="submit"> Delete Post</button>
             </form>
           <%}else{%>
             <div class="flex col-12">
