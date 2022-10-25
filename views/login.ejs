@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 
-<main class="container h-90% p-10">
+<main class="container min-h-[80vh] p-10">
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
@@ -32,7 +32,7 @@
             name="password"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-outline">Submit</button>
+        <button type="submit" class="mt-10 btn btn-accent bg-black text-white">Submit</button>
       </form>
     </section>
   </div>

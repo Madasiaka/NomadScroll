@@ -33,20 +33,14 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).lean()
+      const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).populate('user').lean()
+
       res.render("post.ejs", { post: post, user: req.user, comments: comments});
     } catch (err) {
       console.log(err);
     }
   },
-  // getPastTrips: async (req, res) => {
-  //   try {
-  //   const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" }).lean();
-  //   res.render("pastTrips.ejs", { posts: posts, user: req.user });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-// },
+  
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
@@ -55,6 +49,8 @@ module.exports = {
       await Post.create({
         hostelName: req.body.hostelName,
         city: req.body.city,
+        formattedAddress: req.body.formattedAddress,
+        coordinates: req.body.coordinates,
         image: result.secure_url,
         cloudinaryId: result.public_id,
         review: req.body.review,

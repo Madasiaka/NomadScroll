@@ -1,51 +1,80 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-24">
-    <div class="col-6">
-      <h2 class="text-5xl font-bold pb-2"><%= post.hostelName %></h2>
-      <h3 class="text-3xl pb-2 pl-5"><%= post.city %></h3>
-      <img class="shadow-2xl img-fluid" src="<%= post.image%>" />
+<%- include('partials/maps') -%>
 
-      
-      <div class="row justify-content-between">
-        <%if(post.user == user.id){ %>
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="left col-3"
-        >
-          <button class="btn btn-primary btn-outline fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
+  <div class="container">
+    <div class="row flex sm:flex-col md:flex-row justify-content-center mt-24">
+      <div class="col-6">
+        <h2 class="text-5xl font-bold pb-6">
+          <%= post.hostelName %>
+        </h2>
+        <div class="">
+        <div class="justify-between flex sm:flex-row md:flex-col">
+          <div class="">
+            <h3 class="text-3xl pb-6 ">
+              <%= post.city %>
+            </h3>
+          </div>
+          <div class="align-middle col-6">
+            <span class="text-3xl mr-5">Quick Review:</span>
+            <% if(post.quickReview=="Yah" ){ %>
+              <span class="text-3xl fa fa-thumbs-up"></span>
+              <% } else { %>
+                <span class="text-3xl fa fa-thumbs-down"></span>
+                <% } %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-3 mt-5">
-      <h3 class="text-2xl text-decoration-line: underline">Thoughts:</h3>
-      <p><%= post.review %></p>
-      <span>Quick Review</span>
-      <% if(post.quickReview == "Yah"){ %>
-        <span class="fa fa-thumbs-up"></span>
-      <% } else { %>
-        <span class="fa fa-thumbs-down"></span>
-        <% } %>
-    </div>
-
-    <ul>
-      <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <%= comments[i].comment %>
-        </li>
-      <% } %>
-    </ul>
-    <form class="pb-10" action="/comment/createComment/<%= post.id %>" method="POST">
-      <div class="mb-3">
-          <label for="comment" class="form-label">Comment</label>
+        <img class="shadow-2xl img-fluid" src="<%= post.image%>" />
+      </div>
+      <div class="col-5">
+          <%if(post.user==user.id){ %>
+            <div class="flex col-12 items-end flex-row-reverse justify-between">
+            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="left col-3">
+              <button class="mt-12 text-center btn btn-accent bg-black text-white fa fa-trash md:btn-md lg:btn-lg" type="submit">Delete Post</button>
+            </form>
+          <%}else{%>
+            <div class="flex col-12">
+          <%} %>
+              <h3 class="text-3xl text-decoration-line: underline">Thoughts:</h3>
+            </div>
+        <p class="my-3">
+          <%= post.review %>
+        </p>
+        <div class="flex row justify-content-center">
+          <div class="card card-compact bg-base-100 shadow-lg m-3">
+            
+            <div class="container">
+              <div id="map" style="height: 450px;"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <form class="w-3/5 p-10 m-16 shadow-lg rounded-lg" action="/comment/createComment/<%= post.id %>" method="POST">
+        <div class="mb-3">
+          <label for="comment" class="form-label text-3xl">Leave a Comment</label>
           <input type="text" class="form-control" id="comment" name="comment">
-      </div>
-      <button type="submit" class="btn btn-primary btn-outline">Submit</button>
-    </form>
-    
-  </div>
-</div>
+        </div>
+        <button type="submit" class="btn btn-accent bg-black text-white">Submit</button>
+      </form>
 
-<%- include('partials/footer') -%>
+      <% for(var i=0; i < comments.length; i++) {%>
+        <div
+          class="bg-white rounded-lg p-3 w-3/5 flex flex-col justify-center items-center md:items-start shadow-lg mb-4">
+          <div class="flex flex-row justify-center mr-2">
+            <img alt="avatar" width="48" height="48" class="rounded-full w-10 h-10 mr-4 shadow-lg mb-4"
+              src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png">
+            <h3 class="text-purple-600 font-semibold text-lg text-center md:text-left ">
+              <%= comments[i].user.userName %>
+            </h3>
+          </div>
+          <p style="width: 90%" class="text-gray-600 text-lg md:text-left ">
+            <%= comments[i].comment %>
+          </p>
+        </div>
+        <% } %>
+
+
+    </div>
+  </div>
+
+  <%- include('partials/footer') -%>

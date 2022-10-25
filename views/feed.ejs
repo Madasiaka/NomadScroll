@@ -1,15 +1,8 @@
 <%- include('partials/header') -%>
-<!-- <%- include('partials/mapquestApi') -%> -->
 
   <div class="container bg-base-300 pb-10">
     <div class="row justify-content-center mt-5">
       <h2 class="font-bold mt-10 pl-10 pb-10 text-5xl">All past trips</h2>
-      <!-- <div class="m-40px">
-        <input type="search" id="search-input" placeholder="Start Searching..." />
-      </div> -->
-      <!-- <div class="card card-compact w-3/5 bg-base-100 z-10 m-3">
-        <div id="map" style="width: 100%; height: 530px;"></div>
-      </div> -->
       <ul class="row list-unstyled">
         <% for(var i=0; i < posts.length; i++) { %>
             <a href="/post/<%= posts[i]._id %>">

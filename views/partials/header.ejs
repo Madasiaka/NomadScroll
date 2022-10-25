@@ -16,12 +16,20 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="/js/navBar.js"></script>  
+<script src="/js/navBar.js"></script>
+
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+<script type="text/javascript"></script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpFYIEwmhTQKpsq5VuWM5ujubLDNZrJh4&callback=initMap">
+</script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 
 <body>
 
-  <div class="navbar fixed top-0 left-0 right-0 z-50 bg-base-200" id="navBar">
+  <div class="navbar fixed top-0 left-0 right-0 z-50 bg-slate-300" id="navBar">
     <div class="flex-1">
       <a href="/home" class="btn btn-ghost normal-case text-xl">NomadScroll</a>
     </div>

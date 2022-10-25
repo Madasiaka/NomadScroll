@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<%- include('partials/mapQuestSearch') -%>
+<%- include('partials/maps') -%>
 
   <div class="container ">
     <div class="row mt-5 justify-content-center">
@@ -12,13 +12,10 @@
         </div>
 
         <div class="mt-5">
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <form action="/post/createPost" id="hostelForm" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="hostelName" class="form-label">Hostel Name</label>
-              <!-- <div class>
-                <input type="search" id="search-input" placeholder="Start Searching..." />
-              </div> -->
-              <input type="search" name="hostelName" id="search-input" placeholder="Search for a hostel..." class="form-control" required>
+              <input type="text" name="hostelName" id="hostelName" placeholder="Add a hostel ..." class="form-control" required>
             </div>
 
             <div class="mb-3">
@@ -50,7 +47,7 @@
               </section>
             </div>
               <section class="mb-3">
-                <button type="button" class="btn btn-outline " id="metFriendsBtn">Add another friend</button>
+                <button type="button" class="btn btn-accent " id="metFriendsBtn"> + friend</button>
               </section>
             
             <div class="mb-3">
@@ -62,13 +59,7 @@
               </select>
             </div>
            
-<!-- 
-              <section class="col-12">
-                <button type="button" class="btn btn-outline-warning text-black" id="lessFriendsBtn">Whoops - too many
-                  friends</button>
-              </section> -->
-
-            <button type="submit" class="btn btn-primary btn-outline mb-10" value="Upload">Submit</button>
+            <button type="submit" class="btn btn-accent text-white bg-black mb-10" value="Upload">Submit</button>
 
           </form>
         </div>
