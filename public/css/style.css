@@ -36,6 +36,10 @@
   }
 
 /* Standardize the buttons a bit better */
-  .btn{
+  /* .btn {
     width: 200px;
   }
+
+  .btn.sm{
+    width: 100px
+  } */
